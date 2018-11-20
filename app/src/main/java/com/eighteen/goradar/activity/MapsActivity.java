@@ -195,13 +195,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 feimeiguo_rela.setVisibility(View.VISIBLE);
                 us_rela.setVisibility(View.GONE);
             }else if(country.equals("SG")){
-                help.setVisibility(View.VISIBLE);
                 feimeiguo_rela.setVisibility(View.VISIBLE);
                 us_rela.setVisibility(View.GONE);
             }else{
                 feimeiguo_rela.setVisibility(View.GONE);
                 us_rela.setVisibility(View.VISIBLE);
             }
+            help.setVisibility(View.GONE);
         }else if(language.equals("zh")){
             feimeiguo_rela.setVisibility(View.VISIBLE);
             us_rela.setVisibility(View.GONE);
