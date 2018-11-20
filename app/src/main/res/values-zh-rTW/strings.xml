@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GO Radar</string>
+
+    <string name="skip">跳過</string>
+    <string name="dialogtitle">未連接網絡</string>
+    <string name="dialogcontent">連接網絡後才能訪問某些頁面哦！</string>
+    <string name="corpe">地圖</string>
+    <string name="map">地圖2</string>
+    <string name="recommend">推薦</string>
+    <string name="botany">圖鑑 </string>
+    <string name="level_screen">攻略</string>
+    <string name="title">取得專業版寶可夢雷達地圖</string>
+    <string name="content">專業版寶可夢雷達地圖，抓住更多稀有的精靈寶可夢</string>
+    <string name="rating">5星評分鼓勵</string>
+    <string name="unity">免費試用7天</string>
+    <string name="lv_calc">個體值</string>
+</resources>
