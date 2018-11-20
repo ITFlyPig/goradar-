@@ -71,7 +71,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
     private static final String TAG = "MapsActivity";
     NetReceiver mReceiver = new NetReceiver();
     IntentFilter mFilter = new IntentFilter();
@@ -106,6 +106,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private MyOnStartSetupFinishedListener mOnStartSetupFinishedListener = new MyOnStartSetupFinishedListener();//启动结果回调接口
     private GoogleBillingUtil googleBillingUtil;
     private static  String SUB_ID;//订阅的id
+
+    private TextView tvSub;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,6 +144,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         EventBus.getDefault().register(this);
 
         SUB_ID = GoogleBillingUtil.getInstance().subsSKUS[0];
+
+        tvSub = findViewById(R.id.tv_sub);
+        tvSub.setOnClickListener(this);
 
     }
 
@@ -610,6 +615,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         unregisterReceiver(mReceiver);
         MobclickAgent.onPause(this);
         super.onDestroy();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_sub:
+                //开始订阅
+                EventBus.getDefault().post(new EventModel(Constant.Event.QUERY_SUB_AND_BUY));
+                break;
+        }
+
     }
 
 
